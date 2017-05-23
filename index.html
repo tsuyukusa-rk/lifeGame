@@ -1,20 +1,87 @@
-<!doctype html>
-
-<html lang="ja">
+<!DOCTYPE html>
+<html >
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta charset="utf-8">
-  <title>lifeGame</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <title>Conway's Game Of Life Customizable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-  <div>
-    <canvas id="canvassample"></canvas>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="./js/index.js"></script>
+  <div class="lifein">
+	<div class="lifein-inner">
+		<div class="life-wrap"><canvas id="life"></canvas><canvas id="life_bg"></canvas></div>
+		<div action="" class="life-controller">
+			<div class="controll-wrap">
+				<div class="disp">
+					<div id="resultgen"></div>
+					<div id="resultrate"></div>
+				</div>
+				<div class="settings">
+					<div class="bt-group">
+						<button title="PLAY/STOP" id="play" value="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+						<button title="STEP" id="step" value="step"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+						<button title="RANDOM" id="rnd" value="rnd"><i class="fa fa-random" aria-hidden="true"></i></button>
+						<button title="DELETE" id="del" value="del"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+					</div>
+
+					<div class="bt-group">
+						<button title="LEFT" id="left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+						<button title="UP" id="up"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+						<button title="DOWN" id="down"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+						<button title="RIGHT" id="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+					</div>
+
+					<div class="bt-group">
+						<button title="IMPORT" id="import" value="import"><i class="fa fa-upload" aria-hidden="true"></i></button>
+						<button title="EXPORT" id="export" value="export"><i class="fa fa-download" aria-hidden="true"></i></button>
+					</div>
+				</div>
+				<div class="speed">
+					 SPEED:
+					<label>1<input type="radio" name="lifespeed" value="1" checked="checked"></label>
+					<label>100<input type="radio" name="lifespeed" value="100"></label>
+					<label>400<input type="radio" name="lifespeed" value="400"></label>
+					TORUS
+					<input type="checkbox" id="torus" checked="checked">
+				</div>
+				<div class="settings">
+					COLS:<input type="number" value="128" id="ip_cols">
+					ROWS:<input type="number" value="128" id="ip_rows">
+				</div>
+				<div class="settings">
+					SIDE:<input type="number" value="2" id="ip_side">
+					MARGIN:<input type="number" value="1" id="ip_margin">
+				</div>
+				<div class="settings">
+					RULE:<select name="rule" id="sl_rule">
+						<option value="B3/S23" selected="selected">Original (B3/S23)</option>
+						<option value="B36/S23">HighLife (B36/S23)</option>
+						<option value="B3/S012345678">Life Without Death (B3/S012345678)</option>
+						<option value="B2/S">Seeds (B2/S)</option>
+						<option value="B3678/S34678">Day &amp; Night (B3678/S34678)</option>
+						<option value="B35678/S5678">Diamoeba (B35678/S5678)</option>
+						<option value="B34/S456">Bacteria (B34/S456)</option>
+						<option value="B378/S235678">Coagulations (B378/S235678)</option>
+						<option value="B1/S012345678">H-trees (B1/S012345678)</option>
+						<option value="B368/S245">Move (B368/S245)</option>
+						<option value="B345/S5">LongLife (B345/S5)</option>
+						<option value="B1/S12">B1/S12</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="modal" data-modal="hide">
+	<textarea class="mo" id="import_area" cols="30" rows="10"></textarea>
+	<textarea class="mo" id="export_area" cols="30" rows="10"></textarea>
+	<button id="close" value="close"><i class="fa fa-times" aria-hidden="true"></i></button>
+</div>
+  
+<script src="js/index.js"></script>
+
 </body>
 </html>
