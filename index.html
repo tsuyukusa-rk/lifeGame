@@ -11,7 +11,10 @@
 <body>
   <div class="lifein">
 	<div class="lifein-inner">
-		<div class="life-wrap"><canvas id="life"></canvas><canvas id="life_bg"></canvas></div>
+		<div class="life-wrap">
+      <canvas id="life" height="596" width="596"></canvas>
+      <canvas id="life_bg" height="596" width="596"></canvas>
+    </div>
 		<div action="" class="life-controller">
 			<div class="controll-wrap">
 				<div class="disp">
@@ -80,7 +83,10 @@
 	<textarea class="mo" id="export_area" cols="30" rows="10"></textarea>
 	<button id="close" value="close"><i class="fa fa-times" aria-hidden="true"></i></button>
 </div>
-  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.7.3/jcanvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 <script src="js/index.js"></script>
 
 </body>

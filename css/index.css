@@ -23,26 +23,35 @@ ul, li {
 }
 #life {
 	display: block;
-	margin: 0 auto;
+	margin: auto;
 	max-width: 100%;
-	width: auto;
+	width: 298px;
 	position: relative;
 	z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 #life_bg {
 	display: block;
-	margin: 0 auto;
+	margin: auto;
 	max-width: 100%;
-	width: auto;
+	width: 298px;
 	position: relative;
 	z-index: 0;
-	position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .life-wrap {
 	position: relative;
 	background-color: #555;
-	padding: 5px 4px 4px 5px;
 	font-size: 0;
+  padding-top: 100%;
 }
 .life-controller {
 	font-family: 'Arial', Gadget, sans-serif;
